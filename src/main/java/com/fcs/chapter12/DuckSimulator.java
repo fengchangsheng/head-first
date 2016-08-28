@@ -1,5 +1,7 @@
 package com.fcs.chapter12;
 
+import com.fcs.chapter12.observer.Quackologist;
+
 /**
  * Created by Lucare.Feng on 2016/8/27.
  */
@@ -62,6 +64,13 @@ public class DuckSimulator {
 
         System.out.println("Duck Simulator: Mallard Flock Simulation");
         simulate(flockOfMallards);
+
+
+        System.out.println("Duck Simulator: With Observer");
+        Quackologist quackologist = new Quackologist();
+        flockOfDucks.registerObserver(quackologist);
+
+        simulate(flockOfDucks);
     }
 
     void simulate() {
